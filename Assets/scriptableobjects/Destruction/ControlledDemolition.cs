@@ -7,7 +7,7 @@ public class ControlledDemolition : DestructionSequence
 {
 
 	public float CollapseTime = 1f;
-	public float MovementScale = 0.2f;
+	public float MovementScale = 2.2f;
 	public bool MoveInsteadOfScale = false;
 	public ParticleSystem DustParticles;
 	public float DustSurroundFactor = 1.3f;
@@ -52,6 +52,7 @@ public class ControlledDemolition : DestructionSequence
 		float startTime = Time.time;
 		while (Time.time < startTime + CollapseTime)
 		{
+			
 			float progress = Mathf.Clamp01((Time.time - startTime) / CollapseTime);
 
 			if (MoveInsteadOfScale)
@@ -61,8 +62,10 @@ public class ControlledDemolition : DestructionSequence
 			}
 			else
 			{
-				transform.localScale = new Vector3(baseScale.x, Mathf.Lerp(baseScale.y, 0, progress), baseScale.z);
-				transform.position = basePosition + new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f))*MovementScale;
+				
+				runner.gameObject.transform.localScale = new Vector3(baseScale.x, Mathf.Lerp(baseScale.y, 0, progress), baseScale.z);
+				runner.gameObject.transform.position = basePosition + new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f))*MovementScale;
+				Debug.Log (transform.localScale);
 			}
 			yield return null;
 		}
