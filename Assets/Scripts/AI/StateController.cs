@@ -7,9 +7,9 @@ using Complete;
 public class StateController : MonoBehaviour {
 
 	public State currentState;
-	//public EnemyStats enemyStats;
+	public EnemyStats enemyStats;
 	public Transform eyes;
-	public State remainState;
+	//public State remainState;
 
 
 	[HideInInspector] public NavMeshAgent navMeshAgent;
@@ -30,6 +30,7 @@ public class StateController : MonoBehaviour {
 
 	public void SetupAI(bool aiActivationFromTankManager, List<Transform> wayPointsFromTankManager)
 	{
+		Debug.Log ("SetupAI");
 		wayPointList = wayPointsFromTankManager;
 		aiActive = aiActivationFromTankManager;
 		if (aiActive) 
@@ -45,6 +46,8 @@ public class StateController : MonoBehaviour {
 	{
 		if (!aiActive)
 			return;
+
+		Debug.Log ("actions");
 		currentState.UpdateState (this);
 	}
 
@@ -53,27 +56,27 @@ public class StateController : MonoBehaviour {
 		if (currentState != null && eyes != null) 
 		{
 			Gizmos.color = currentState.sceneGizmoColor;
-			//Gizmos.DrawWireSphere (eyes.position, enemyStats.lookSphereCastRadius);
+			Gizmos.DrawWireSphere (eyes.position, enemyStats.lookSphereCastRadius);
 		}
 	}
 
 	public void TransitionToState(State nextState)
 	{
-		if (nextState != remainState) 
-		{
-			currentState = nextState;
-			OnExitState ();
-		}
+//		if (nextState != remainState) 
+//		{
+//			currentState = nextState;
+//			OnExitState ();
+//		}
 	}
 
-	public bool CheckIfCountDownElapsed(float duration)
-	{
-		stateTimeElapsed += Time.deltaTime;
-		return (stateTimeElapsed >= duration);
-	}
-
-	private void OnExitState()
-	{
-		stateTimeElapsed = 0;
-	}
+//	public bool CheckIfCountDownElapsed(float duration)
+//	{
+//		stateTimeElapsed += Time.deltaTime;
+//		return (stateTimeElapsed >= duration);
+//	}
+//
+//	private void OnExitState()
+//	{
+//		stateTimeElapsed = 0;
+//	}
 }
