@@ -1,16 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AI/State.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Managers/GameManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/AI/StateController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AI/State.cs" Line="11" Column="44" />
+      <File FileName="Assets/Scripts/AI/StateController.cs" Line="31" Column="21" />
+      <File FileName="Assets/Scripts/AI/State.cs" Line="1" Column="1" />
       <File FileName="Assets/scriptableobjects/Destruction/ControlledDemolition.cs" Line="1" Column="1" />
       <File FileName="Assets/scriptableobjects/Destruction/Destructible.cs" Line="1" Column="1" />
       <File FileName="Assets/scriptableobjects/Destruction/DestructionSequence.cs" Line="1" Column="1" />
       <File FileName="Assets/scriptableobjects/Destruction/HideBehindEffect.cs" Line="1" Column="1" />
       <File FileName="Assets/PostProcessing/Editor/Models/ColorGradingModelEditor.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AI/Actions.cs" Line="8" Column="2" />
+      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="52" Column="83" />
+      <File FileName="Assets/Scripts/AI/Actions.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Managers/TankManager.cs" Line="118" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
