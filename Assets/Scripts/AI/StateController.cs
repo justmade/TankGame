@@ -9,7 +9,7 @@ public class StateController : MonoBehaviour {
 	public State currentState;
 	public EnemyStats enemyStats;
 	public Transform eyes;
-	//public State remainState;
+	public State remainState;
 
 
 	[HideInInspector] public NavMeshAgent navMeshAgent;
@@ -46,8 +46,6 @@ public class StateController : MonoBehaviour {
 	{
 		if (!aiActive)
 			return;
-
-		Debug.Log ("actions");
 		currentState.UpdateState (this);
 	}
 
@@ -62,11 +60,11 @@ public class StateController : MonoBehaviour {
 
 	public void TransitionToState(State nextState)
 	{
-//		if (nextState != remainState) 
-//		{
-//			currentState = nextState;
-//			OnExitState ();
-//		}
+		if (nextState != remainState) 
+		{
+			currentState = nextState;
+			OnExitState ();
+		}
 	}
 
 //	public bool CheckIfCountDownElapsed(float duration)
@@ -75,8 +73,8 @@ public class StateController : MonoBehaviour {
 //		return (stateTimeElapsed >= duration);
 //	}
 //
-//	private void OnExitState()
-//	{
-//		stateTimeElapsed = 0;
-//	}
+	private void OnExitState()
+	{
+		stateTimeElapsed = 0;
+	}
 }

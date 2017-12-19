@@ -15,6 +15,7 @@ public class LookDecision : Decision {
 	{
 		RaycastHit hit;
 
+		Debug.Log ("look");
 		Debug.DrawRay (controller.eyes.position, controller.eyes.forward.normalized * controller.enemyStats.lookRange, Color.green);
 
 		if (Physics.SphereCast (controller.eyes.position, controller.enemyStats.lookSphereCastRadius, controller.eyes.forward, out hit, controller.enemyStats.lookRange)
