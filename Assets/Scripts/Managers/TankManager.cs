@@ -25,8 +25,11 @@ using System.Collections.Generic;
 		private GameObject m_CanvasGameObject;                  // Used to disable the world space UI during the Starting and Ending phases of each round.
 		private StateController m_StateController;				// Reference to the StateController for AI tanks
 
+		private bool isAI = false;	
+		
 		public void SetupAI(List<Transform> wayPointList)
 		{
+			isAI = true;	
 			m_StateController = m_Instance.GetComponent<StateController> ();
 			m_StateController.SetupAI (true, wayPointList);
 
@@ -93,7 +96,7 @@ using System.Collections.Generic;
 		// Used during the phases of the game where the player should be able to control their tank.
 		public void EnableControl ()
 		{
-			if (m_Movement != null)
+			if (m_Movement != null && !isAI)
 				m_Movement.enabled = true;
 
 			if (m_StateController != null)
