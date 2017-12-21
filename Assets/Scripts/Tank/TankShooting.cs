@@ -14,6 +14,8 @@ public class TankShooting : MonoBehaviour
     public float m_MaxLaunchForce = 30f; 
     public float m_MaxChargeTime = 0.75f;
 
+	[HideInInspector]public bool isAI;
+
     
     private string m_FireButton;         
     private float m_CurrentLaunchForce;  
@@ -38,6 +40,9 @@ public class TankShooting : MonoBehaviour
 
     private void Update()
     {
+		if (isAI)
+			return;
+		
         // Track the current state of the fire button and make decisions based on the current launch force.
 		// The slider should have a default value of the minimum launch force.
 		m_AimSlider.value = m_MinLaunchForce;

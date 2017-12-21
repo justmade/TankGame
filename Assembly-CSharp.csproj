@@ -119,6 +119,7 @@
      <Compile Include="Assets\Scripts\AI\EnemyStats.cs" />
      <Compile Include="Assets\Scripts\AI\LookDecision.cs" />
      <Compile Include="Assets\Scripts\AI\PatrolAction.cs" />
+     <Compile Include="Assets\Scripts\AI\ScanDecision.cs" />
      <Compile Include="Assets\Scripts\AI\State.cs" />
      <Compile Include="Assets\Scripts\AI\StateController.cs" />
      <Compile Include="Assets\Scripts\AI\Transition.cs" />
