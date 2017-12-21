@@ -13,7 +13,7 @@ public class StateController : MonoBehaviour {
 
 
 	[HideInInspector] public NavMeshAgent navMeshAgent;
-	[HideInInspector] public Complete.TankShooting tankShooting;
+	[HideInInspector] public TankShooting tankShooting;
 	[HideInInspector] public List<Transform> wayPointList;
 	[HideInInspector] public int nextWayPoint;
 	[HideInInspector] public Transform chaseTarget;
@@ -24,7 +24,7 @@ public class StateController : MonoBehaviour {
 
 	void Awake () 
 	{
-		tankShooting = GetComponent<Complete.TankShooting> ();
+		tankShooting = GetComponent<TankShooting> ();
 		navMeshAgent = GetComponent<NavMeshAgent> ();
 	}
 
@@ -67,12 +67,12 @@ public class StateController : MonoBehaviour {
 		}
 	}
 
-//	public bool CheckIfCountDownElapsed(float duration)
-//	{
-//		stateTimeElapsed += Time.deltaTime;
-//		return (stateTimeElapsed >= duration);
-//	}
-//
+	public bool CheckIfCountDownElapsed(float duration)
+	{
+		stateTimeElapsed += Time.deltaTime;
+		return (stateTimeElapsed >= duration);
+	}
+
 	private void OnExitState()
 	{
 		stateTimeElapsed = 0;

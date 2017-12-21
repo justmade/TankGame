@@ -112,6 +112,9 @@
      <Compile Include="Assets\scriptableobjects\RangedFloat.cs" />
      <Compile Include="Assets\scriptableobjects\SimpleAudioEvent.cs" />
      <Compile Include="Assets\Scripts\AI\Actions.cs" />
+     <Compile Include="Assets\Scripts\AI\ActiveStateDecision.cs" />
+     <Compile Include="Assets\Scripts\AI\AttackAction.cs" />
+     <Compile Include="Assets\Scripts\AI\ChaseAction.cs" />
      <Compile Include="Assets\Scripts\AI\Decision.cs" />
      <Compile Include="Assets\Scripts\AI\EnemyStats.cs" />
      <Compile Include="Assets\Scripts\AI\LookDecision.cs" />
