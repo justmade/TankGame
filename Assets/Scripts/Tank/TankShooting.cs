@@ -64,6 +64,9 @@ public class TankShooting : MonoBehaviour
 			// Change the clip to the charging clip and start it playing.
 			m_ShootingAudio.clip = m_ChargingClip;
 			m_ShootingAudio.Play ();
+
+			m_AimSlider.value = m_CurrentLaunchForce;
+
 		}
 		// Otherwise, if the fire button is being held and the shell hasn't been launched yet...
 		else if (Input.GetButton (m_FireButton) && !m_Fired)

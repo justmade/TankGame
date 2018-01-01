@@ -9,7 +9,7 @@ public class ShellExplosion : MonoBehaviour
     public float m_MaxDamage = 100f;                  
     public float m_ExplosionForce = 1000f;            
     public float m_MaxLifeTime = 2f;                  
-    public float m_ExplosionRadius = 5f;              
+    public float m_ExplosionRadius = 2f;              
 
 
     private void Start()
@@ -30,7 +30,7 @@ public class ShellExplosion : MonoBehaviour
 
 			// If they don't have a rigidbody, go on to the next collider.
 			if (targetRigidbody) {
-				targetRigidbody.AddExplosionForce (m_ExplosionForce, transform.position, m_ExplosionRadius);
+				//targetRigidbody.AddExplosionForce (m_ExplosionForce, transform.position, m_ExplosionRadius,3.0f);
 			}
 				
 			// Add an explosion force.
