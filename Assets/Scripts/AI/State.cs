@@ -26,7 +26,7 @@ public class State : ScriptableObject {
 		for (int i = 0; i < transitions.Length; i++) 
 		{
 			bool decisionSucceeded = transitions [i].decision.Decide (controller);
-
+//			Debug.Log ("decisionSucceeded:" + decisionSucceeded);
 			if (decisionSucceeded) {
 				controller.TransitionToState (transitions [i].trueState);
 			} else 

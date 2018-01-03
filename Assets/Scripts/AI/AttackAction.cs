@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,7 +21,6 @@ public class AttackAction : Actions
 			Debug.Log("attack");
 			if (controller.CheckIfCountDownElapsed (controller.enemyStats.attackRate)) 
 			{
-				Debug.Log (controller.enemyStats.attackForce);
 
 				controller.tankShooting.Fire (controller.enemyStats.attackForce, controller.enemyStats.attackRate);
 			}

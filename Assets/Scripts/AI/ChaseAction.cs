@@ -12,9 +12,10 @@ public class ChaseAction : Actions
 
 	private void Chase(StateController controller)
 	{
+//		Debug.Log ("Chase");
 		controller.navMeshAgent.destination = controller.chaseTarget.position;
-//		if (!controller.navMeshAgent.isStopped) {
-//			controller.navMeshAgent.Move (controller.chaseTarget.position);
-//		}
+		if (!controller.navMeshAgent.isStopped) {
+			controller.navMeshAgent.Move (controller.chaseTarget.position);
+		}
 	}
 }
