@@ -64,7 +64,6 @@ public class TankShooting : MonoBehaviour
 			// Change the clip to the charging clip and start it playing.
 			m_ShootingAudio.clip = m_ChargingClip;
 			m_ShootingAudio.Play ();
-
 			m_AimSlider.value = m_CurrentLaunchForce;
 
 		}
@@ -73,7 +72,6 @@ public class TankShooting : MonoBehaviour
 		{
 			// Increment the launch force and update the slider.
 			m_CurrentLaunchForce += m_ChargeSpeed * Time.deltaTime;
-
 			m_AimSlider.value = m_CurrentLaunchForce;
 		}
 		// Otherwise, if the fire button is released and the shell hasn't been launched yet...
