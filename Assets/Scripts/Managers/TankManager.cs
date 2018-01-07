@@ -51,6 +51,11 @@ using System.Collections.Generic;
 			}
 		}
 
+		public void setGameManager(GameManager gm){
+			TankHealth th = m_Instance.GetComponent<TankHealth> ();
+			th.setGameManager (gm);
+		}
+
 
 		public void SetupPlayerTank ()
 		{

@@ -13,6 +13,8 @@ using UnityEngine.UI;
 		public float m_EndDelay = 3f;               // The delay between the end of RoundPlaying and RoundEnding phases.
 		public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases.
 		public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
+		public Image damageImage;
+		public Color flashColour = new Color(1f, 0f, 0f, 0.3f);
 		public GameObject[] m_TankPrefabs;
 		public TankManager[] m_Tanks;               // A collection of managers for enabling and disabling different aspects of the tanks.
 		public List<Transform> wayPointsForAI;
@@ -22,7 +24,7 @@ using UnityEngine.UI;
 		private WaitForSeconds m_EndWait;           // Used to have a delay whilst the round or game ends.
 		private TankManager m_RoundWinner;          // Reference to the winner of the current round.  Used to make an announcement of who won.
 		private TankManager m_GameWinner;           // Reference to the winner of the game.  Used to make an announcement of who won.
-
+		private bool damaged;
 
 		private void Start()
 		{
@@ -45,6 +47,7 @@ using UnityEngine.UI;
 				Instantiate(m_TankPrefabs[0], m_Tanks[0].m_SpawnPoint.position, m_Tanks[0].m_SpawnPoint.rotation) as GameObject;
 			m_Tanks[0].m_PlayerNumber = 1;
 			m_Tanks[0].SetupPlayerTank();
+			m_Tanks [0].setGameManager (this);
 
 			// Setup the AI tanks
 			for (int i = 1; i < m_Tanks.Length; i++)
@@ -56,7 +59,25 @@ using UnityEngine.UI;
 				m_Tanks[i].SetupAI(wayPointsForAI);
 			}
 		}
+		
+		public void tankDamage(){
+			damaged = true;
+		}
 
+		private void Update()
+		{
+			if(damaged)
+			{
+				damageImage.color = flashColour;
+			}
+			else
+			{
+				damageImage.color = Color.Lerp (damageImage.color, Color.clear, 1.0f * Time.deltaTime);
+			}
+			damaged = false;
+		}
+
+		
 
 		private void SetCameraTargets()
 		{

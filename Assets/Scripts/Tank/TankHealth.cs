@@ -9,12 +9,14 @@ public class TankHealth : MonoBehaviour
     public Color m_FullHealthColor = Color.green;  
     public Color m_ZeroHealthColor = Color.red;    
     public GameObject m_ExplosionPrefab;
-    
+	public Image damageImage;
+	public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
     
     private AudioSource m_ExplosionAudio;          
     private ParticleSystem m_ExplosionParticles;   
     private float m_CurrentHealth;  
-    private bool m_Dead;            
+    private bool m_Dead;  
+	private GameManager m_gm;
 
 
     private void Awake()
@@ -35,6 +37,10 @@ public class TankHealth : MonoBehaviour
 
         SetHealthUI();
     }
+
+	public void setGameManager(GameManager gm){
+		m_gm = gm;
+	}
     
 
     public void TakeDamage(float amount)
@@ -45,6 +51,20 @@ public class TankHealth : MonoBehaviour
 
 		// Change the UI elements appropriately.
 		SetHealthUI ();
+
+//		if(damaged)
+//		{
+//			damageImage.color = flashColour;
+//		}
+//		else
+//		{
+		if (m_gm) {
+			m_gm.tankDamage ();
+		}
+			
+//		}
+//		damaged = false;
+
 
 		// If the current health is at or below zero and it has not yet been registered, call OnDeath.
 		if (m_CurrentHealth <= 0f && !m_Dead)

@@ -1,24 +1,26 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AI/PatrolAction.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Tank/TankHealth.cs">
     <Files>
-      <File FileName="Assets/Scripts/Tank/TankShooting.cs" Line="74" Column="59" />
+      <File FileName="Assets/Scripts/Tank/TankHealth.cs" Line="57" Column="69" />
+      <File FileName="Assets/Scripts/AI/ScanDecision.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Tank/TankShooting.cs" Line="1" Column="1" />
       <File FileName="Assets/scriptableobjects/Destruction/Destructible.cs" Line="1" Column="1" />
       <File FileName="Assets/scriptableobjects/Destruction/DestructionSequence.cs" Line="1" Column="1" />
       <File FileName="Assets/scriptableobjects/Destruction/HideBehindEffect.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Shell/ShellExplosion.cs" Line="58" Column="69" />
+      <File FileName="Assets/Scripts/Shell/ShellExplosion.cs" Line="1" Column="1" />
       <File FileName="Assets/scriptableobjects/MinMaxRangeAttribute.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AI/AttackAction.cs" Line="29" Column="2" />
-      <File FileName="Assets/Scripts/AI/ScanDecision.cs" Line="11" Column="1" />
-      <File FileName="Assets/Scripts/AI/PatrolAction.cs" Line="24" Column="2" />
-      <File FileName="Assets/Scripts/AI/LookDecision.cs" Line="17" Column="3" />
-      <File FileName="Assets/Scripts/AI/ChaseAction.cs" Line="15" Column="5" />
+      <File FileName="Assets/Scripts/AI/AttackAction.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AI/PatrolAction.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AI/LookDecision.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AI/ChaseAction.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/AI/ActiveStateDecision.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/AI/Actions.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/AI/StateController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AI/State.cs" Line="29" Column="1" />
+      <File FileName="Assets/Scripts/AI/State.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/AI/EnemyStats.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/AI/Decision.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
