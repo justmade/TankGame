@@ -18,7 +18,6 @@ public class AttackAction : Actions
 		if (Physics.SphereCast (controller.eyes.position, controller.enemyStats.lookSphereCastRadius, controller.eyes.forward, out hit, controller.enemyStats.attackRange)
 			&& hit.collider.CompareTag ("Player")) 
 		{
-			Debug.Log("attack");
 			if (controller.CheckIfCountDownElapsed (controller.enemyStats.attackRate)) 
 			{
 

@@ -12,12 +12,11 @@ public class PatrolAction : Actions
 
 	private void Patrol(StateController controller)
 	{
-		Debug.Log ("Patrol");
 		controller.navMeshAgent.destination = controller.wayPointList [controller.nextWayPoint].position;
+		controller.navMeshAgent.isStopped = false;
 
 		if (controller.navMeshAgent.remainingDistance <= controller.navMeshAgent.stoppingDistance && !controller.navMeshAgent.pathPending) 
 		{
-			Debug.Log ("controller.nextWayPoint"+controller.nextWayPoint);
 			controller.nextWayPoint = (controller.nextWayPoint + 1) % controller.wayPointList.Count;
 		}
 	}
