@@ -65,7 +65,6 @@ public class ControlledDemolition : DestructionSequence
 				
 				runner.gameObject.transform.localScale = new Vector3(baseScale.x, Mathf.Lerp(baseScale.y, 0, progress), baseScale.z);
 				runner.gameObject.transform.position = basePosition + new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f))*MovementScale;
-				Debug.Log (transform.localScale);
 			}
 			yield return null;
 		}

@@ -57,7 +57,7 @@ namespace Complete
             Transform[] targets = new Transform[m_Tanks.Length];
 
             // For each of these transforms...
-            for (int i = 0; i < targets.Length; i++)
+            for (int i = 0; i < 1; i++)
             {
                 // ... set it to the appropriate tank transform.
                 targets[i] = m_Tanks[i].m_Instance.transform;

@@ -11,6 +11,7 @@ using UnityEngine.UI;
 		public int m_NumRoundsToWin = 5;            // The number of rounds a single player has to win to win the game.
 		public float m_StartDelay = 3f;             // The delay between the start of RoundStarting and RoundPlaying phases.
 		public float m_EndDelay = 3f;               // The delay between the end of RoundPlaying and RoundEnding phases.
+		public GameObject cameraObj;
 		public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases.
 		public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
 		public Image damageImage;
@@ -18,6 +19,9 @@ using UnityEngine.UI;
 		public GameObject[] m_TankPrefabs;
 		public TankManager[] m_Tanks;               // A collection of managers for enabling and disabling different aspects of the tanks.
 		public List<Transform> wayPointsForAI;
+		public bool isShaking = false;
+		public float radian = 0.0f;
+		
 
 		private int m_RoundNumber;                  // Which round the game is currently on.
 		private WaitForSeconds m_StartWait;         // Used to have a delay whilst the round starts.
@@ -62,10 +66,24 @@ using UnityEngine.UI;
 		
 		public void tankDamage(){
 			damaged = true;
+			isShaking = true;
 		}
 
 		private void Update()
 		{
+			if (isShaking) {
+			float R = 0.5f - Mathf.Lerp (0f, 0.5f,radian/360f);
+			Debug.Log (R);
+				radian += 20.0f;
+				float angle = 2 * radian * Mathf.PI / 180;
+				float offsetY = Mathf.Sin (angle) * R;
+				cameraObj.gameObject.transform.position += new Vector3 (0, offsetY, 0);
+				if (radian >= 360.0f) {
+					radian = 0;
+					isShaking = false;
+				}
+
+			}
 			if(damaged)
 			{
 				damageImage.color = flashColour;
@@ -82,10 +100,10 @@ using UnityEngine.UI;
 		private void SetCameraTargets()
 		{
 			// Create a collection of transforms the same size as the number of tanks.
-			Transform[] targets = new Transform[m_Tanks.Length];
+			Transform[] targets = new Transform[1];
 
 			// For each of these transforms...
-			for (int i = 0; i < targets.Length; i++)
+			for (int i = 0; i < 1; i++)
 			{
 				// ... set it to the appropriate tank transform.
 				targets[i] = m_Tanks[i].m_Instance.transform;
