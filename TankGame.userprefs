@@ -1,20 +1,22 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AI/State.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scriptableobjects/Destruction/ControlledDemolition.cs">
     <Files>
+      <File FileName="Assets/scriptableobjects/Destruction/Destructible.cs" Line="18" Column="38" />
       <File FileName="Assets/Scripts/AI/Actions.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AI/State.cs" Line="15" Column="33" />
       <File FileName="Assets/Scripts/AI/StateController.cs" Line="48" Column="11" />
-      <File FileName="Assets/scriptableobjects/Destruction/ControlledDemolition.cs" Line="1" Column="1" />
-      <File FileName="Assets/scriptableobjects/Destruction/Destructible.cs" Line="1" Column="1" />
       <File FileName="Assets/scriptableobjects/Destruction/DestructionSequence.cs" Line="1" Column="1" />
       <File FileName="Assets/scriptableobjects/Destruction/HideBehindEffect.cs" Line="1" Column="1" />
       <File FileName="Assets/PostProcessing/Editor/Models/ColorGradingModelEditor.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="52" Column="83" />
       <File FileName="Assets/Scripts/Managers/TankManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AI/Transition.cs" Line="11" Column="2" />
+      <File FileName="Assets/Scripts/AI/Transition.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/AI/PatrolAction.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AI/LookDecision.cs" Line="18" Column="22" />
+      <File FileName="Assets/Scripts/AI/LookDecision.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="75" Column="35" />
+      <File FileName="Assets/Scripts/Camera/CameraControl.cs" Line="8" Column="51" />
+      <File FileName="Assets/Scripts/AI/ScanDecision.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Completed-Assets/Scripts/Camera/CameraControl.cs" Line="91" Column="33" />
+      <File FileName="Assets/scriptableobjects/Destruction/ControlledDemolition.cs" Line="78" Column="54" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
