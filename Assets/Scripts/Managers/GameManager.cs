@@ -37,7 +37,7 @@ using UnityEngine.UI;
 			m_EndWait = new WaitForSeconds (m_EndDelay);
 
 			SpawnAllTanks();
-//			SetCameraTargets();
+			SetCameraTargets();
 
 			// Once the tanks have been created and the camera is using them as targets, start the game.
 			StartCoroutine (GameLoop ());
@@ -73,7 +73,6 @@ using UnityEngine.UI;
 		{
 			if (isShaking) {
 			float R = 0.5f - Mathf.Lerp (0f, 0.5f,radian/360f);
-			Debug.Log (R);
 				radian += 20.0f;
 				float angle = 2 * radian * Mathf.PI / 180;
 				float offsetY = Mathf.Sin (angle) * R;
@@ -111,6 +110,7 @@ using UnityEngine.UI;
 
 			// These are the targets the camera should follow.
 //			m_CameraControl.m_Targets = targets;
+			
 			m_CameraControl.setTanke (targets);
 		}
 
