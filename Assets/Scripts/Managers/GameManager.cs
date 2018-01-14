@@ -37,7 +37,7 @@ using UnityEngine.UI;
 			m_EndWait = new WaitForSeconds (m_EndDelay);
 
 			SpawnAllTanks();
-			SetCameraTargets();
+//			SetCameraTargets();
 
 			// Once the tanks have been created and the camera is using them as targets, start the game.
 			StartCoroutine (GameLoop ());
@@ -110,7 +110,8 @@ using UnityEngine.UI;
 			}
 
 			// These are the targets the camera should follow.
-			m_CameraControl.m_Targets = targets;
+//			m_CameraControl.m_Targets = targets;
+			m_CameraControl.setTanke (targets);
 		}
 
 

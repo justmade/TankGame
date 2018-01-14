@@ -11,20 +11,41 @@ public class CameraControl : MonoBehaviour
     private Camera m_Camera;                        
     private float m_ZoomSpeed;                      
     private Vector3 m_MoveVelocity;                 
-    private Vector3 m_DesiredPosition;              
+    private Vector3 m_DesiredPosition;      
+
+	private Vector3 offset;
+
+	public float smoothing = 5f;
+
+//    private void Awake()
+//    {
+//        m_Camera = GetComponentInChildren<Camera>();
+//    }
 
 
-    private void Awake()
-    {
-        m_Camera = GetComponentInChildren<Camera>();
-    }
+	private void Awake(){
+		m_Camera = GetComponentInChildren<Camera>();
+
+	}
+
+	private void FixedUpdate(){
+		if(m_Targets.Length > 0){
+			Vector3 targetCam =  m_Targets[0].position + offset;
+			transform.position = Vector3.Lerp (transform.position, targetCam,smoothing*Time.deltaTime);
+		}
+	}
+
+	public void setTanke( Transform[] _tanks){
+		m_Targets = _tanks;
+		offset = transform.position - m_Targets[0].position;
+	}
 
 
-    private void FixedUpdate()
-    {
-        Move();
-        Zoom();
-    }
+//    private void FixedUpdate()
+//    {
+//        Move();
+//        Zoom();
+//    }
 
 
     private void Move()
