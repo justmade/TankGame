@@ -47,11 +47,12 @@ using UnityEngine.UI;
 		private void SpawnAllTanks()
 		{
 			//Manually setup the player at index zero in the tanks array
-//			m_Tanks[0].m_Instance =
-//				Instantiate(m_TankPrefabs[0], m_Tanks[0].m_SpawnPoint.position, m_Tanks[0].m_SpawnPoint.rotation) as GameObject;
-//			m_Tanks[0].m_PlayerNumber = 1;
-//			m_Tanks[0].SetupPlayerTank();
-//			m_Tanks [0].setGameManager (this);
+			m_Tanks[0].m_Instance =
+				Instantiate(m_TankPrefabs[0], m_Tanks[0].m_SpawnPoint.position, m_Tanks[0].m_SpawnPoint.rotation) as GameObject;
+			m_Tanks[0].m_PlayerNumber = 1;
+			m_Tanks[0].SetupPlayerTank();
+			m_Tanks[0].setGameManager (this);
+		cameraObj = m_Tanks[0].m_Instance.transform.Find("CameraRig").gameObject;
 
 			// Setup the AI tanks
 			for (int i = 1; i < m_Tanks.Length; i++)
