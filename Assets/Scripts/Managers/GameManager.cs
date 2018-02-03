@@ -37,7 +37,7 @@ using UnityEngine.UI;
 			m_EndWait = new WaitForSeconds (m_EndDelay);
 
 			SpawnAllTanks();
-//			SetCameraTargets();
+			SetCameraTargets();
 
 			// Once the tanks have been created and the camera is using them as targets, start the game.
 			StartCoroutine (GameLoop ());
@@ -52,7 +52,7 @@ using UnityEngine.UI;
 			m_Tanks[0].m_PlayerNumber = 1;
 			m_Tanks[0].SetupPlayerTank();
 			m_Tanks[0].setGameManager (this);
-		cameraObj = m_Tanks[0].m_Instance.transform.Find("CameraRig").gameObject;
+		    //cameraObj = m_Tanks[0].m_Instance.transform.Find("CameraRig").gameObject;
 
 			// Setup the AI tanks
 			for (int i = 1; i < m_Tanks.Length; i++)

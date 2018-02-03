@@ -16,8 +16,10 @@ public class TankMovement : MonoBehaviour
     private Rigidbody m_Rigidbody;         
     private float m_MovementInputValue;    
     private float m_TurnInputValue;        
-    private float m_OriginalPitch;         
+    private float m_OriginalPitch;    
 
+	private Quaternion turnRotation= Quaternion.Euler (0f, 0f, 0f);
+	private Quaternion lastRotation= Quaternion.Euler (0f, 0f, 0f);
 
     private void Awake()
     {
@@ -82,9 +84,11 @@ public class TankMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // Move and turn the tank.
-		Move();
-		Turn();
+//		Move();
+//		Turn();
+		getTankDirection ();
     }
+
 
 
     private void Move()
@@ -101,5 +105,65 @@ public class TankMovement : MonoBehaviour
 		float turn = m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
 		Quaternion turnRotation = Quaternion.Euler (0f, turn, 0f);
 		m_Rigidbody.MoveRotation (m_Rigidbody.rotation * turnRotation); 
+//		m_Rigidbody.rotation = turnRotation;
     }
+
+	private void getTankDirection()
+	{
+//		if (lastRotation) {
+//			lastRotation = Quaternion.Euler (0f, 0f, 0f);
+//		}
+		m_TurnInputValue = 0;
+		m_MovementInputValue = 0;
+
+		if (Input.GetKey (KeyCode.W)) {
+			m_MovementInputValue = 1;
+		}else if (Input.GetKey (KeyCode.S)) {
+			m_MovementInputValue = -1;
+		} 
+		if (Input.GetKey (KeyCode.A)) {
+			m_TurnInputValue = -1;
+		}else if (Input.GetKey (KeyCode.D)) {
+			m_TurnInputValue = 1;
+		}
+
+		if (m_TurnInputValue == 0) {
+			
+			if (m_MovementInputValue > 0) {
+				turnRotation = Quaternion.Euler (0f, 0f, 0f);
+			} else if (m_MovementInputValue < 0) {
+				turnRotation = Quaternion.Euler (0f, 180f, 0f);
+			}
+
+		} else if (m_TurnInputValue > 0) {
+			
+			if (m_MovementInputValue > 0) {
+				turnRotation = Quaternion.Euler (0f, 45f, 0f);
+			} else if (m_MovementInputValue < 0) {
+				turnRotation = Quaternion.Euler (0f, 135f, 0f);
+			} else if (m_MovementInputValue == 0) {
+				turnRotation = Quaternion.Euler (0f, 90f, 0f);
+			}
+		} else if (m_TurnInputValue < 0) {
+
+			if (m_MovementInputValue > 0) {
+				turnRotation = Quaternion.Euler (0f, -45f, 0f);
+			} else if (m_MovementInputValue < 0) {
+				turnRotation = Quaternion.Euler (0f, -135f, 0f);
+			} else if (m_MovementInputValue == 0) {
+				turnRotation = Quaternion.Euler (0f, -90f, 0f);
+			}
+		}
+		turnRotation = Quaternion.RotateTowards (lastRotation, turnRotation,20);
+
+//		Debug.Log ("m_TurnInputValue"+ m_TurnInputValue);
+//		Debug.Log ("m_MovementInputValue"+ m_MovementInputValue);
+		m_Rigidbody.MoveRotation(turnRotation);
+		lastRotation = turnRotation;
+//		m_Rigidbody.rotation = turnRotation;
+
+
+		Vector3 movement = transform.forward * 1 * m_Speed * Time.deltaTime;
+		m_Rigidbody.MovePosition (m_Rigidbody.position + movement);
+	}
 }
